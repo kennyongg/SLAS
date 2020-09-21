@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Recovery</title>
+    <title>SLAS account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/app.css"> 
+</head>
+<body>
+    <div id="recovery_PasswordBlock" class="container recoverBlock white-block">
+        <div class="row">
+            <div id="" class="col-md formHead">
+                <h4 id="recover_title" class="text-center">Password Recovery</h4>
+                <p class="text-muted text-center">Kindly provide your email here</p>
+            </div>
+        </div>
+        <div id="recover_messageBox" class="form_message"></div>
+        <form id="recover_formBox" class="formBox" method="POST">
+            <div class="form-group">
+                <label class="text-center"></label>
+                <input type="email" name="recoverEmail" id="recover_email" class="form-control" placeholder="Your Email">
+            </div>
+            <button id="recoverButton" class="formButton btn btn-primary btn-block" type="submit" name="recover">Recover </button>
+        </form>
+        <p class="text-center">Back to <a href="../index.html">Login</a></p>
+    </div>
+
+    <div id="recovery_successBlock" class="container recoverBlock white-block">
+        <h4 class="text-center">Recovery Success</h4>
+        <div id="recovery_successMessageBlock" class=""></div>
+    </div>
+
+    <div id="recovery_ExpiredBlock" class="container recoverBlock white-block">
+        <h4>Expired Link<h4>
+        <div id="recovery_ExpiredMessageBlock" class=""></div>
+        <p class="text-center">Back to <a href="recovery.html">Recovery</a> Page</p>
+    </div>
+
+    <div id="newPasswordBlock" class="container recoverBlock white-block">
+        <div class="row">
+            <div id="" class="col-md formHead">
+                    <h4 id="recover_title" class="text-center">Password Recovery</h4>
+                    <p class="text-muted text-center">Kindly provide your new password here</p>
+            </div>
+        </div>
+        <div id="newPassword_messageBox" class="form_message"></div>
+        <form id="newPassword_formBox" class="formBox" method="POST">
+            <div class="form-group">
+                <label for="">Enter New Password</label>
+                <input type="password" name="newPassword" id="recover_pass" class="form-control password-form">
+            </div>
+            <div class="form-group">
+                <label for="">Confirm New Password</label>
+                <input type="password" name="newPassword2" id="recover_pass2" class="form-control password-form">
+            </div>
+            <button id="" class="formButton btn btn-primary btn-block" type="submit" name="newPassword">Submit</button>
+        </form>
+        <p class="text-center">Back to <a href="../index.html">Login</a></p>
+    </div>
+
+    <script src="js/accounts.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>

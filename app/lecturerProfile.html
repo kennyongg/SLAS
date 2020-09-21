@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <title>Lecturer Profile</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script type="text/javascript" src="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.css">
+        <script type="text/javascript" src="https://jonthornton.github.io/jquery-timepicker/lib/bootstrap-datepicker.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://jonthornton.github.io/jquery-timepicker/lib/bootstrap-datepicker.css">
+        <script>   
+            $(function(){
+                $("#datePicker").datepicker();
+                $('#startTimePicker').timepicker({
+                    'minTime': '9:00am',
+                    'maxTime': '5:30pm'
+                });
+                $('#endTimePicker').timepicker({
+                    'minTime': '9:30am',
+                    'maxTime': '6:00pm'
+                });
+            });
+        </script>
+        <style>
+            tr.spaceUnder>td {
+                padding-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body onload="loadLecturer()">
+        <div id="menuBar"></div>
+            <div id="lecturerBlock" class="container">
+                <div class="d-flex d-flex justify-content-center">
+                    <div id="lecturerProfileBlock" class="white-block" style="padding:20px;">
+                        <h3>Lecturer Profile</h3><br>
+                        <dl class="row">
+                            <dt class="col-sm-4">Lecturer Name </dt>
+                            <dd id="lecturerName" class="col-sm-8"></dd>
+
+                            <dt class="col-sm-4">Department </dt>
+                            <dd id="department" class="col-sm-8"></dd>
+
+                            <dt class="col-sm-4">Office Location </dt>
+                            <dd id="officeLocation" class="col-sm-8"></dd>
+
+                            <dt class="col-sm-4">Phone </dt>
+                            <dd id="phone" class="col-sm-8"></dd>
+
+                            <dt class="col-sm-4">Email </dt>
+                            <dd id="email" class="col-sm-8"></dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="d-flex d-flex justify-content-center">
+                    <div id="lecturerScheduleBlock" class="col-sm-8 white-block" style="padding:20px; margin:10px;">
+
+                        <div id="lecturerTableBlock" class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Day</th>
+                                    <th scope="col">Available Time</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>Monday</th>
+                                    <td>
+                                        <ul id="listDayMonday"></ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Tuesday</th>
+                                    <td>
+                                        <ul id="listDayTuesday"></ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Wednesday</th>
+                                    <td>
+                                        <ul id="listDayWednesday"></ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Thursday</th>
+                                    <td>
+                                        <ul id="listDayThursday"></ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Friday</th>
+                                    <td>
+                                        <ul id="listDayFriday"></ul>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <button id="appointmentBtn1" class="formButton btn btn-primary btn-block">Book Appointment</button>
+
+                            <div id="appointmentPopup1" class="lecturer-popup">
+                                <div class="lecturer-popup-content white-block">
+                                    <div class="lecturer-popup-body">
+                                        <span class="lecturer-popup-close">&times;</span><br>
+                                        <h3 class="text-center" stlye="margin-top: 10px;">Create Appointment</h3>
+                                        <form id="createAppointForm">
+                                            <div class="form-group">
+                                                <b>Title:</b>
+                                                <input type="text" class="form-control override" id="createTitle">
+                                            </div>
+                                            <div class="form-group">
+                                                <b>Date:</b>
+                                                <input type="text" class="form-control override" id="datePicker" autocomplete="off">
+                                            </div>
+                                            <div class="form-group">
+                                                <b>Starting Time:</b>
+                                                <input type="text" id="startTimePicker" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <b>Ending Time:</b>
+                                                <input type="text" id="endTimePicker" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <b>Description:</b>
+                                                <textarea id="createDesc" class="form-control" rows="10"></textarea>
+                                            </div>
+
+                                            <button id="createAppointButton" type="submit" class="btn btn-info btn-block">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        <script>
+            $(document).ready(function(){
+                $('#menuBar').load('menu.html');
+            }(jQuery));
+        </script>
+        <script src="js/lecturerProfile.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    </body>
+</html>

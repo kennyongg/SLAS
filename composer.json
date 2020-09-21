@@ -1,0 +1,37 @@
+{
+    "require": {
+        "monolog/monolog": "1.0.*",
+        "sendgrid/sendgrid": "~7",
+        "vlucas/phpdotenv": "^3.3",
+        "ext-mysqli": "*",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "eluceo/ical": "^0.15.0",
+        "jsvrcek/ics": "^0.6.0",
+        "league/csv": "^9.2",
+        "squizlabs/php_codesniffer": "*",
+        "hidehalo/nanoid-php": "^1.1"
+    },
+    "authors": [
+        {
+            "name": "Goh Ie Xiann",
+            "email": "16064271@imail.sunway.edu.my"
+        },
+        {
+            "name": "Foo Chee Keong",
+            "email": "16064362@imail.sunway.edu.my"
+        },
+        {
+            "name": "Grant Yong Yung Ching",
+            "email": "16064610@imail.sunway.edu.my"
+        },
+        {
+            "name": "Kenny Ong Jon Yen",
+            "email": "16063695@imail.sunway.edu.my"
+        },
+        {
+            "name": "Ting Sai Foong",
+            "email": "16043143@imail.sunway.edu.my"
+        }
+    ]
+}

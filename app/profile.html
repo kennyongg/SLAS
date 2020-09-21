@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Landing Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    </head>
+    <body onload=loadProfile()>
+        <div id="menuBar"></div>
+        <div id="profileLoader" class="loader"></div>
+        <div id="profileBody" class="container white-block animate-bottom">
+            <h3 id="profileHead" class="text-center">Profile</h3>
+            <div id="profileBox" class="row">
+                <div id="imgBox" class="col-md-5 col-sm-12 text-center">
+                    <img src="img/user.png" id="profileImg" alt="User Profile Picture">
+                </div>
+                <div id="profileTable" class="col-md-6 col-sm-12">
+                    <dl id="profile_nameSection" class="row">
+                        <dt id="profileName" class="col-sm-4 termLine">Name </dt>
+                        <dd id="profileNameData" class="col-sm-8 termLine"></dd>
+                    </dl>   
+                    <dl id="profile_emailSection" class="row">
+                        <dt id="profileEmail" class="col-sm-4 termLine">Email</dt>
+                        <dd id="profileEmailData" class="col-sm-8 termLine"></dd>
+                    </dl>  
+                    
+                    <!-- For student -->
+                    <div id="studentProfile">
+                        <dl id="profile_courseSection" class="row">
+                            <dt id="profileCourse" class="col-sm-4 termLine">Course</dt>
+                            <dd id="profileCourseData" class="col-sm-8 termLine"></dd>
+                        </dl> 
+                        <dl id="profile_intakeSection" class="row">
+                            <dt id="profileIntake" class="col-sm-4 termLine">Intake</dt>
+                            <dd id="profileIntakeData" class="col-sm-8 termLine"></dd>
+                        </dl>
+                    </div>
+                    
+                    <!-- For Lecturer -->
+                    <div id="lecturerProfile">
+                        <dl id="profile_departmentSection" class="row">
+                            <dt id="profileDepart" class="col-sm-4 termLine">Department</dt>
+                            <dd id="profileDepartData" class="col-sm-8 termLine">Department</dd>
+                        </dl>  
+                        <dl id="profile_officeSection" class="row"> 
+                            <dt id="profileOffice" class="col-sm-4 termLine">Office</dt>
+                            <dd id="profileOfficeData" class="col-sm-8 termLine"></dd>
+                        </dl>
+                        <dl id="profile_phoneSection" class="row"> 
+                            <dt id="profilePhone" class="col-sm-4 termLine">Phone</dt>
+                            <dd id="profilePhoneData" class="col-sm-8 termLine"></dd>
+                        </dl>
+                    </div>
+                    <!-- Shared by both sides -->
+                     <dl id="profile_typeSection" class="row"> 
+                        <dt id="profileType" class="col-sm-4 termLine">User-Type</dt>
+                        <dd id="profileTypeData" class="col-sm-8 termLine"></dd>
+                    </dl>
+
+                    <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#changePassModal">Change Password</button>
+                </div>
+            </div>
+            <div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="changePassModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Changing Password</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body modal-body-centered">
+                            <div id="createSlotMessage"></div>
+                            <form id="changePassForm">
+                                <div class="input-group input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" for="" style="margin: 10px 0">New Password</span>
+                                    </div>
+                                    <input type="password" name="changePass" id="changePass" class="form-control">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="changePassButton" class="btn btn-primary" type="submit" onclick="changePass()">Change</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </body>
+    <script>
+        $(document).ready(function(){
+            $('#menuBar').load('menu.html');
+             
+        }(jQuery));
+    </script>
+    <script src="js/profile.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</html>

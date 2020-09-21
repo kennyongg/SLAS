@@ -1,0 +1,514 @@
+/* Used App wide element */
+body {
+    background: linear-gradient(142deg, rgba(0,16,20,1) 14%, rgba(4,104,139,1) 52%, rgba(0,212,255,1) 83%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.white-block {
+    background-color: #FFFF;
+    border-radius: 25px;
+}
+.termLine {
+    padding: 10px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: popup-animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: popup-animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes popup-animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes popup-animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.popup-close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-body {padding: 2px 16px 16px;}
+
+/* -- Start Custom Menu -- */
+.dropdown-menu {
+    border: 0px solid; 
+}
+.navbar-toggler {
+    border: none;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    right: 2%;
+    font-size: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/* -- End Custom Menu-- */
+
+/* TODO - Change part of the animation to suit design */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 0.5s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+
+/* Loader Class */
+.loader {
+    border: 13px solid #f3f3f3; /* Light grey */
+    border-top: 13px solid #3498db; /* Blue */
+    border-radius: 50%;
+    position: relative;
+    top: 150px;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+/*  Loader Class */
+
+/* -- Login background -- */
+a, a:hover {
+    text-decoration: none;
+}
+
+.btn:focus, .btn:active, .btn:active:focus {
+    outline: none;
+}
+
+input {
+    margin: 10px 0px;
+}
+
+input.override{
+    margin:0 !important
+}
+
+/* -- Login Page -- */
+.loginBlock {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 55%;
+    min-width: 280px;
+    background: white;
+}
+
+.form_message {
+    width: 65%;
+    margin: 0 auto;
+}
+.success_message {
+    padding: 15px 10px;
+    background-color: #f9fbff;
+}
+
+.error_message {
+    padding: 15px 10px;
+    background-color: red;
+}
+
+.errorInput{
+    border-color: red;
+}
+
+.formHead {
+    padding: 10px 0;
+}
+
+#formSelect {
+    padding: 20px 0;
+}
+
+.selectButton {
+    margin: 10px 0;
+}
+
+#reg_formBox {
+    display: none;
+}
+
+.formBox {
+    margin: 20px 0;
+}
+.userForm {
+    margin-top: 20;
+}
+
+#reg_lecturer {
+    display: none;
+}
+
+.btnActive {
+    background-color: #5d5f63; 
+    color: #FFFF;
+}
+
+.formButton {
+    margin: 30px 0;
+}
+
+/* -- End Login Page--*/
+
+/* Recover Page */
+.recoverBlock {
+    margin: 40px auto;
+    padding: 20px 35px;
+    max-width: 35%;
+    min-width: 280px;
+    background: white;
+}
+
+#newPasswordBlock {
+    display:none;
+}
+
+#recovery_successBlock {
+    display: none;
+}
+
+#recovery_ExpiredBlock {
+    display: none;
+}
+
+/* End Recover Page */
+
+
+/* -- Landing Page -- */
+#landingBody{
+    overflow: hidden;
+    max-width: 70%;
+    min-width: 370px;
+}
+
+#searchBarBody {
+    margin: 25px 0;
+    padding: 35px 10px;
+}
+
+#landingSearch {
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+}
+
+#UpcomingTable {
+    background-color: #FFFF;
+    margin: 25px 0;
+    padding: 30px;
+    position: relative;
+}
+
+#landingSeachResultBox {
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.resultLines{
+    width: 50%;
+    padding: 10px 0;
+    margin: 5px auto;
+}
+
+.resultLines:hover {
+    background-color: #babdc2;
+}
+.resultLines a {
+    text-decoration: none;
+    color: #020202;
+}
+
+/* -- End Landing Page -- */
+
+/* -- Start Profile Page -- */
+#profileImg {
+    max-width: 55%;
+    height: auto;
+    padding: 20px 0;
+}
+
+#profileBody {
+    max-width: 70%;
+    margin: 35px auto;
+    padding : 30px;
+}
+
+#profileHead {
+    padding: 15px 0;
+}
+
+#profileBody {
+    display: none;
+}
+
+/* -- End Profile Page -- */
+
+/* -- Start Appointment List && Appointment Details -- */
+
+#listTableBlock {
+    position: relative;
+    top: 50px; 
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    /* TODO */
+    /* display:none; */
+}
+
+#listHead {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#detailTableBlock {
+    position: relative;
+    top: 50px; 
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    display: none;
+}
+
+/* -- End Appointment List && Appointment Details -- */
+
+
+/* -- Start Spawn Modal -- */
+
+
+/* -- End Spawn Modal -- */
+
+/* -- Start Lecturer Profile -- */
+#lecturerBlock {
+    max-width: 75%;
+    margin: 0 auto;
+}
+#lecturerProfileBlock {
+    margin: 10px;
+}
+
+.lecturer-popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.lecturer-popup-content {
+    position: relative;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid #888;
+    max-width: 55%;
+    min-width: 370px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: popup-animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: popup-animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes popup-animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes popup-animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.lecturer-popup-close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.lecturer-popup-close:hover,
+.lecturer-popup-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.lecturer-popup-body {padding: 2px 16px 16px;}
+
+.slotTime {
+    margin: 5px 0;
+    color: #3498db;
+}
+
+/* -- End Lecturer Profile -- */
+
+/* -- Admin Page -- */
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-top: 20px;
+}
+.items .item {
+    flex: 1 0 220px;
+    box-sizing: border-box;
+    padding: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.items .item2 {
+    flex: 1 0 30px;
+    box-sizing: border-box;
+    background: #e0ddd5;
+    color: #171e42;
+    border-radius: 25px;
+    padding: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100%;
+}
+.btn-group, .btn-group-toggle {
+    padding-top:2%;
+    padding-bottom:2%;
+}
+.formButton {
+    width:auto;
+    margin:auto;
+}
+
+#lecturerSlot {
+    width: 70%;
+    margin: auto;
+}
+/* -- End Admin Page -- */
+
+/* -- Schedule Page -- */
+
+#scheduleBlock {
+    max-width: 75%;
+    margin: 0 auto;
+    position: relative;
+    top:50px;   
+}
+
+
+/* #scheduleTableBlock {
+
+}
+#scheduleTable {
+
+}
+
+#slotList {
+
+} */
+
+
+/* -- End Schedule Page -- */
+

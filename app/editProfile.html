@@ -1,0 +1,103 @@
+<html>
+<head>
+        <title>Edit User Profile</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    </head>
+    <body onload=loadProfile()>
+        <div id="menuBar"></div>
+        <div id="profileLoader" class="loader"></div>
+        <div id="profileBody" class="container white-block animate-bottom">
+            <h3 id="profileHead" class="text-center">Profile</h3>
+            <form id="editProfile_formBox" class="formBox" method="POST">
+                <div id="profileBox" class="row">
+                    <div id="imgBox" class="col-md-5 col-sm-12 text-center">
+                        <img src="img/user.png" id="profileImg" alt="User Profile Picture">
+                    </div>
+                    <div id="profileTable" class="col-md-6 col-sm-12">
+
+                        <div id="editProfile_messageBox" class="text-center form_message"></div>
+
+                        <dl id="profile_nameSection" class="row">
+                            <dt id="profileName" class="col-sm-4 termLine">Name </dt>
+                            <dd class="col-md-8"><input type="text" id="profileNameData" class="termLine form-control" /></dd>
+                        </dl>
+                        <dl id="profile_emailSection" class="row">
+                            <dt id="profileEmail" class="col-sm-4 termLine">Email</dt>
+                            <dd class="col-md-8"><input type="text" id="profileEmailData" class="termLine form-control" disabled/></dd>
+                        </dl>
+
+                        <!-- For student -->
+                        <div id="studentProfile">
+                            <dl id="profile_courseSection" class="row">
+                                <dt id="profileCourse" class="col-sm-4 termLine">Course</dt>
+                                <dd class="col-md-8"><input type="text" id="profileCourseData" class="termLine form-control" /></dd>
+                            </dl>
+                            <dl id="profile_intakeSection" class="row">
+                                <dt id="profileIntake" class="col-sm-4 termLine">Intake</dt>
+                                <dd class="col-md-8"><input type="text" id="profileIntakeData" class="termLine form-control" /></dd>
+                            </dl>
+                        </div>
+
+                        <!-- For Lecturer -->
+                        <div id="lecturerProfile">
+                            <dl id="profile_departmentSection" class="row">
+                                <dt id="profileDepart" class="col-sm-4 termLine">Department</dt>
+                                <dd class="col-md-8"><input type="text" id="profileDepartData" class="termLine form-control" /></dd>
+                            </dl>
+                            <dl id="profile_officeSection" class="row">
+                                <dt id="profileOffice" class="col-sm-4 termLine">Office</dt>
+                                <dd class="col-md-8"><input type="text" id="profileOfficeData" class="termLine form-control" /></dd>
+                            </dl>
+                            <dl id="profile_phoneSection" class="row">
+                                <dt id="profilePhone" class="col-sm-4 termLine">Phone</dt>
+                                <dd class="col-md-8"><input type="text" id="profilePhoneData" class="termLine form-control" /></dd>
+                            </dl>
+                        </div>
+                        <!-- Shared by both sides -->
+                         <dl id="profile_typeSection" class="row">
+                            <dt id="profileType" class="col-sm-4 termLine">User-Type</dt>
+                            <dd class="col-md-8">
+<!--                                <select id="profileTypeData" class="termLine form-control">-->
+<!--                                    <option value="student">Student</option>-->
+<!--                                    <option value="lecturer">Lecturer</option>-->
+<!--                                    <option value="admin">Admin</option>-->
+<!--                                </select>-->
+                                <input type="text" id="profileTypeData" class="termLine form-control" disabled/>
+                            </dd>
+                        </dl>
+                        <dl id="profile_activeSection" class="row">
+                            <dt id="profileActive" class="col-sm-4 termLine">Account</dt>
+                            <dd class="col-md-8">
+                                <div id="activeButtons" class="btn-group btn-group-toggle termLine form-group" data-toggle="buttons" style="padding-left: 0;">
+                                    <label id="labelActive" class="btn btn-outline-info"><input type="radio" id="accountActive" name="profileActiveData"> Active</label>
+                                    <label id="labelInactive" class="btn btn-outline-info"><input type="radio" id="accountInactive" name="profileActiveData"> Inactive</label>
+                                </div>
+<!--                                <input type="text" id="profileActiveData" class="termLine form-control" />-->
+                            </dd>
+                        </dl>
+
+
+                        <div id="editProfile_button" style="padding-top:3%;">
+                            <button type="submit" class="formButton btn btn-primary btn-block" id="updateButton" name="update">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function(){
+            $('#menuBar').load('menu.html');
+             
+        }(jQuery));
+    </script>
+    <script src="js/editProfile.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+</html>

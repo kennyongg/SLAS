@@ -1,0 +1,86 @@
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="justify-content-start"><a class="navbar-brand" href="landing.html">SLAS</a></div>
+        <div class="justify-content-end">
+
+            <span style="font-size:22px;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a id="homeButton" class="nav-link" href="landing.html"><img src="/SE_Assignment/app/img/home.png" alt="Home" style="width:25px;height:25px;">&nbsp&nbsp Home</a>
+                    <a id="profileButton" class="nav-link" href="profile.html"><img src="/SE_Assignment/app/img/person.png" alt="Profile" style="width:20px;height:20px;">&nbsp&nbsp Profile</a>
+                    <a id="appointmentsButton" class="nav-link" href="appointmentList.html"><img src="/SE_Assignment/app/img/calendar.png" alt="Appointments" style="width:25px;height:25px;">&nbsp&nbsp My Appointments</a>
+                    <a id="scheduleButton" class="nav-link" href="lecturerSchedule.html"><img src="/SE_Assignment/app/img/schedule.png" alt="Edit Schedule" style="width:20px;height:20px;">&nbsp&nbsp Edit Schedule</a>
+                    <a id="manageButton" class="nav-link" href="adminPage.html"><img src="/SE_Assignment/app/img/whitecog.png" alt="User Management" style="width:20px;height:20px;">&nbsp&nbsp Admin Management</a>
+                    <a id="logout" class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal"><img src="/SE_Assignment/app/img/logout.png" alt="Logout" style="width:20px;height:20px;">&nbsp&nbsp Log Out</a>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</nav>
+
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Logging Out</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to log out?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="logout_button" type="button" class="btn btn-primary" onclick="logout()">Log Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let menuUser=sessionStorage.getItem('userAcc');
+
+    function logout () {
+    let logout = new XMLHttpRequest();
+    logout.open("GET","../php/logout.php?logout=true",true);
+   
+    logout.onload = function() {
+        let res = JSON.parse(this.response);
+        if (res["error"]) {
+            window.location.href = "../index.html";
+            alert("Error with removing user session.");
+        } else if (res["success"]) {
+            sessionStorage.clear();
+            window.location.href = "../index.html";
+        }
+    }
+    logout.send();
+}
+
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+    if (menuUser === "student") {
+        document.getElementById('scheduleButton').style.display = "none";
+        document.getElementById('manageButton').style.display = "none";
+    }
+    if (menuUser === "lecturer") {
+        document.getElementById('manageButton').style.display = "none";
+    }
+    if (menuUser === "admin") {
+        document.getElementById('scheduleButton').style.display = "none";
+        document.getElementById('appointmentsButton').style.display = "none";
+    }
+
+</script>
+
+

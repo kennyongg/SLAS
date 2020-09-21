@@ -1,0 +1,138 @@
+<html>
+<head>
+    <title>Appointment Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <style>
+        .confirmButton{
+            border-radius: 4px;
+            background-color: #f2f3f4;
+            font-weight: bold;
+        }
+
+        .confirmButton:hover {
+            background-color: #cdd0d6;
+            color: black;
+        }
+    </style>
+</head>
+<body onload="loadAppointmentDetails()">
+<div id="menuBar"></div>
+<div id="detailLoader" class="loader"></div>
+<div id="detailTableBlock" class="white-block animate-bottom">
+    <h3 id="listHead">Appointment Details</h3>
+    <div class="table-responsive">
+        <table id="listAppointmentTable" class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th width="15%"  style="vertical-align:top; text-align:left;">Subject</th>
+                    <td id="subject"></td>
+                </tr>
+                <tr>
+                    <th>Topic</th>
+                    <td id="topic"></td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td id="date"></td>
+                </tr>
+                <tr>
+                    <th>Time</th>
+                    <td id="time"></td>
+                </tr>
+                <tr>
+                    <th>Venue</th>
+                    <td id="venue"></td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td id="description"></td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td id="status"></td>
+                </tr>
+                <tr>
+                    <th>Rejected Reason</th>
+                    <td id="rejectedReason"></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div align="right">
+        <a href="appointmentList.html"><button class="btn btn-secondary">Back to List</button></a>
+        <button id="cancel" class="btn btn-warning " data-toggle="modal" data-target="#appointCancelModal">Cancel</button>
+        <button id="accept" class="btn btn-primary " onclick="acceptAppoint()">Accept</button>
+        <button id="reject" class="btn btn-warning " data-toggle="modal" data-target="#appointRejectModal">Reject</button>
+    </div>
+</div>
+
+<div class="modal fade" id="appointRejectModal" tabindex="-1" role="dialog" aria-labelledby="appointRejectModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="appointRejectModalLabel">Reject Appointment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure to reject Appointment?</h5>
+                <div id="rejectMessageBox"></div>
+                <form id="rejectAppoint">
+                    <div class="form-group">
+                        <label>Reason: </label>
+                        <textarea class="form-control" id="rejectReason"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="appoint_button" type="submit" class="btn btn-danger" onclick="rejectAppoint()">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="appointCancelModal" tabindex="-1" role="dialog" aria-labelledby="appointcancelModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="appointCancelModalLabel">Cancel Appointment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure to cancel Appointment?
+                <div id="cancelMessageBox"></div>
+                <form id="cancelAppoint">
+                    <div class="form-group">
+                        <label>Reason: </label>
+                        <textarea class="form-control" id="cancelReason"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="appoint_button" type="button" class="btn btn-danger" onclick="cancelAppoint()">Cancel Appointment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('#menuBar').load('menu.html');
+    }(jQuery));
+</script>
+<script src="js/appointmentDetails.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>
